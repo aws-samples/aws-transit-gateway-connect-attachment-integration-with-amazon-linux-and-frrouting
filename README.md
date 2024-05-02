@@ -70,6 +70,11 @@ https://github.com/sciarrilli/free_range_routing/blob/master/free_range_routing.
 Configure:
 
 ```
+! from the Linux prompt to get into FRR
+!
+vtysh
+!
+configure
 !
 ip route 192.168.0.0/24 192.168.0.1
 !
