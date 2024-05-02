@@ -15,6 +15,8 @@ The intent of this GitHub samples is to show how easy and seamlessly you can imp
 
 ### Install Amazon Linux instance in the Appliance VPC:
 
+This testing was performed using below AMI:
+
 AMI ID: ami-0895022f3dac85884
 
 AMI name: amzn2-ami-kernel-5.10-hvm-2.0.20240223.0-x86_64-gp2
