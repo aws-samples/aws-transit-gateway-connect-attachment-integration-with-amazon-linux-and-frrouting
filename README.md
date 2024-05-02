@@ -69,6 +69,8 @@ https://github.com/sciarrilli/free_range_routing/blob/master/free_range_routing.
 
 Configure:
 
+Note: If you use eBGP, you must configure ebgp-multihop with a time-to-live (TTL) value of 2.
+
 ```
 ! from the Linux prompt to get into FRR
 !
