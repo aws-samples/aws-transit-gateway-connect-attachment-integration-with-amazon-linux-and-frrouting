@@ -98,7 +98,7 @@ router bgp 65000
  timers bgp 5 30
  neighbor ebgp peer-group
  neighbor ebgp remote-as 64512
- neighbor ebgp ebgp-multihop 64
+ neighbor ebgp ebgp-multihop 2
  neighbor ebgp update-source 169.254.6.1
  neighbor 169.254.6.2 peer-group ebgp
  neighbor 169.254.6.3 peer-group ebgp
