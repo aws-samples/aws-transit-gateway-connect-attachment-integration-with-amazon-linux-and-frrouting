@@ -1,4 +1,4 @@
-## Transit Gateway Connect Attachment with GREoBGP with Linux and FRRouting
+## Transit Gateway Connect Attachment with Linux and FRRouting using BGP over GRE
 
 If you are looking to test TGW Connect attachment functionality it typically requires procuring 3rd party SD-WAN virtual appliances from Marketplace, obtain eval licenses etc, some of these steps are time consuming, setups are complex and prevents customers from testing this very important feature of TGW which is very commonly used to seamlessly integrate with SD-WAN fabrics.
 
