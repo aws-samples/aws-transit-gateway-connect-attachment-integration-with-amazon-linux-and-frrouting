@@ -217,7 +217,7 @@ Verify that TGW has learned the routes from the virtual appliance:
 * IPv6 considerations:
   * IPv6 BGP peering is not supported by TGW Connect as of today; only IPv4-based BGP peering is supported. IPv6 prefixes are exchanged over IPv4 BGP peering using MP-BGP
   * FRR supports MP-BGP
-* In this example single instance in single AZ is shown for simplicity in production environment use instances across multiple AZs for redundancy
+* In this example single instance in single AZ is shown for simplicity, in production environment use multiple instances across multiple AZs for redundancy
 
 ### Also see: 
 
