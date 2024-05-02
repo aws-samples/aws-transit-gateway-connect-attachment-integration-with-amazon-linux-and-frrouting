@@ -198,7 +198,9 @@ Verify that TGW has learned the routes from the virtual appliance:
 
 ### Note:
 
-While code/config samples in this repository has been tested and believe it works well, as always, be sure to test it in your environment before using it in production!
+* While code/config samples in this repository has been tested and believe it works well, as always, be sure to test it in your environment before using it in production!
+* IPv6 considerations (IPv6 BGP peering is not supported by TGW Connect as of today; only IPv4-based BGP peering is supported. IPv6 prefixes are exchanged over IPv4 BGP peering using MP-BGP)
+* FRR supports MP-BGP
 
 ### Also see: 
 
