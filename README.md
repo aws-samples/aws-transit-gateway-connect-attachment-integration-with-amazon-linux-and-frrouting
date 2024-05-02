@@ -8,10 +8,10 @@ The intent of this GitHub samples is to show how easy and seamlessly you can imp
 
 ### Prerequisites:
 
-* Configure Transit Gateway
+* [Configure Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-getting-started.html)
 * Configure Appliance VPC
 * Configure Spoke VPCs
-* Configure VPC attachments to TGW
+* [Configure VPC attachments to TGW](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-vpc-attachments.html#create-vpc-attachment)
 
 ### Install Amazon Linux instance in the Appliance VPC:
 
@@ -21,12 +21,16 @@ AMI name: amzn2-ami-kernel-5.10-hvm-2.0.20240223.0-x86_64-gp2
 
 ### Configure TGW Connect attachment:
 
-https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html
+A Connect attachment uses an existing VPC or Direct Connect attachment as the underlying transport mechanism.
+
+[Configure TGW Connect attachments and TGW Connect peers](https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html)
+
+Verify:
 
 ![TGW1](https://github.com/aws-samples/aws-transit-gateway-connect-with-amazon-linux-and-frrouting/assets/168686031/60a63922-7a26-48f2-a649-bf9a76629693)
 ![TGW2](https://github.com/aws-samples/aws-transit-gateway-connect-with-amazon-linux-and-frrouting/assets/168686031/35d37d02-91c4-4ca6-854c-3af1185b655a)
 
-### GRE setup on Linux instance:
+### Setup GRE tunnel interfaces on Linux instance:
 
 Configure:
 
@@ -211,6 +215,7 @@ Verify that TGW has learned the routes from the virtual appliance:
 * IPv6 considerations:
   * IPv6 BGP peering is not supported by TGW Connect as of today; only IPv4-based BGP peering is supported. IPv6 prefixes are exchanged over IPv4 BGP peering using MP-BGP
   * FRR supports MP-BGP
+* In this example single instance in single AZ is shown for simplicity in production environment use instances across multiple AZs for redundancy
 
 ### Also see: 
 
