@@ -196,7 +196,7 @@ Verify that TGW has learned the routes from the virtual appliance:
 
 ![tgw3](https://github.com/aws-samples/aws-transit-gateway-connect-with-amazon-linux-and-frrouting/assets/168686031/c26f0b81-176d-48c0-bc89-ea0c557712de)
 
-### Note
+### Note:
 
 While code/config samples in this repository has been tested and believe it works well, as always, be sure to test it in your environment before using it in production!
 
