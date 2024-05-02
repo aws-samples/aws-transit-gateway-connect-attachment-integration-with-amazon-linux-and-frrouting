@@ -6,18 +6,25 @@ The intent of this GitHub samples is to show how easy and seamlessly you can imp
 
 ![tgw-frr](https://github.com/aws-samples/aws-transit-gateway-connect-with-amazon-linux-and-frrouting/assets/168686031/2002fdaa-c457-4675-b71d-682d01b6b25a)
 
-### Configure TGW:
+### Prerequisites:
+
+* Configure Transit Gateway
+* Configure Appliance VPC
+* Configure Spoke VPCs
+* Configure VPC attachments to TGW
+
+### Install Amazon Linux instance in the Appliance VPC:
+
+AMI ID: ami-0895022f3dac85884
+
+AMI name: amzn2-ami-kernel-5.10-hvm-2.0.20240223.0-x86_64-gp2
+
+### Configure TGW Connect attachment:
 
 https://docs.aws.amazon.com/vpc/latest/tgw/tgw-connect.html
 
 ![TGW1](https://github.com/aws-samples/aws-transit-gateway-connect-with-amazon-linux-and-frrouting/assets/168686031/60a63922-7a26-48f2-a649-bf9a76629693)
 ![TGW2](https://github.com/aws-samples/aws-transit-gateway-connect-with-amazon-linux-and-frrouting/assets/168686031/35d37d02-91c4-4ca6-854c-3af1185b655a)
-
-### Install Amazon Linux:
-
-AMI ID: ami-0895022f3dac85884
-
-AMI name: amzn2-ami-kernel-5.10-hvm-2.0.20240223.0-x86_64-gp2
 
 ### GRE setup on Linux instance:
 
@@ -60,16 +67,16 @@ Verify:
 [ec2-user@ip-172-31-1-152 ~]$
 ```
 
-### Install FRR: 
+### Install FRR on the Linux instance: 
 https://github.com/sciarrilli/free_range_routing?tab=readme-ov-file
 
 https://github.com/sciarrilli/free_range_routing/blob/master/free_range_routing.sh
 
 ### BGP Setup:
 
-Configure:
-
 Note: If you use eBGP, you must configure ebgp-multihop with a time-to-live (TTL) value of 2.
+
+Configure:
 
 ```
 ! from the Linux prompt to get into FRR
