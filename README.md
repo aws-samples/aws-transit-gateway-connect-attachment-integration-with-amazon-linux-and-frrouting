@@ -4,6 +4,8 @@ If you are looking to test TGW Connect attachment functionality it typically req
 
 The intent of this GitHub samples is to show how easy and seamlessly you can implement TGW Connect using Amazon Linux and [FRRouting (FRR)](https://frrouting.org/) which is a free and open source Internet routing protocol suite for Linux and Unix platforms which supports all features of BGP. You will not need any license and can configure and do the testing at free of cost (only pay for the underlying EC2 instance); once you are comfortable with the concept you can then choose to implement any of the 3rd party vendor solutions of your choice. 
 
+### Topology Diagram:
+
 ![tgw-frr](https://github.com/aws-samples/aws-transit-gateway-connect-with-amazon-linux-and-frrouting/assets/168686031/2002fdaa-c457-4675-b71d-682d01b6b25a)
 
 ### Prerequisites:
