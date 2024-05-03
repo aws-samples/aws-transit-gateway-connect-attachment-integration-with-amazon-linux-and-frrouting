@@ -50,18 +50,18 @@ sudo ip link set gre1 up
 Verify:
 
 ```
-[ec2-user@ip-172-31-1-152 ~]$ ip addr show eth0
+$ ip addr show eth0
 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 8500 qdisc mq state UP group default qlen 1000
     link/ether 02:1b:4c:bd:d9:d5 brd ff:ff:ff:ff:ff:ff
     inet 172.31.1.152/24 brd 172.31.1.255 scope global dynamic eth0
        valid_lft 2717sec preferred_lft 2717sec
     inet6 fe80::1b:4cff:febd:d9d5/64 scope link
        valid_lft forever preferred_lft forever
-[ec2-user@ip-172-31-1-152 ~]$
+$
 ```
 
 ```
-[ec2-user@ip-172-31-1-152 ~]$ ip addr show gre1
+$ ip addr show gre1
 8: gre1@NONE: <POINTOPOINT,NOARP,UP,LOWER_UP> mtu 8476 qdisc noqueue state UNKNOWN group default qlen 1000
     link/gre 172.31.1.152 peer 192.0.2.40
     inet 169.254.6.1/29 scope global gre1
@@ -70,7 +70,7 @@ Verify:
        valid_lft forever preferred_lft forever
     inet6 fe80::5efe:ac1f:198/64 scope link
        valid_lft forever preferred_lft forever
-[ec2-user@ip-172-31-1-152 ~]$
+$
 ```
 
 ### Install FRR on the Linux instance: 
@@ -113,12 +113,12 @@ router bgp 65000
 Verify configurations:
 
 ```
-[root@ip-172-31-1-152 ec2-user]# vtysh
+# vtysh
 
 Hello, this is FRRouting (version 7.2).
 Copyright 1996-2005 Kunihiro Ishiguro, et al.
 
-ip-172-31-1-152.us-west-2.compute.internal# show running-config
+# show running-config
 Building configuration...
 
 Current configuration:
@@ -148,13 +148,13 @@ router bgp 65000
 line vty
 !
 end
-ip-172-31-1-152.us-west-2.compute.internal#
+#
 ```
 
 Verify BGP neighborship status:
 
 ```
-ip-172-31-1-152.us-west-2.compute.internal# sh ip bgp summary
+# sh ip bgp summary
 
 IPv4 Unicast Summary:
 BGP router identifier 169.254.6.1, local AS number 65000 vrf-id 0
@@ -168,13 +168,13 @@ Neighbor        V         AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down State/P
 169.254.6.3     4      64512  549534  549598        0    0    0 6d20h15m            3
 
 Total number of neighbors 2
-ip-172-31-1-152.us-west-2.compute.internal#
+#
 ```
 
 Verify BGP advertised and Received routes:
 
 ```
-ip-172-31-1-152.us-west-2.compute.internal# sh ip bgp neighbors 169.254.6.2 advertised-routes
+# sh ip bgp neighbors 169.254.6.2 advertised-routes
 BGP table version is 127, local router ID is 169.254.6.1, vrf id 0
 Default local pref 100, local AS 65000
 Status codes:  s suppressed, d damped, h history, * valid, > best, = multipath,
@@ -204,7 +204,7 @@ Origin codes:  i - IGP, e - EGP, ? - incomplete
 *> 172.31.0.0/16    169.254.6.2            100             0 64512 i
 
 Total number of prefixes 3
-ip-172-31-1-152.us-west-2.compute.internal#
+#
 ```
 
 Verify that TGW has learned the routes from the virtual appliance:
