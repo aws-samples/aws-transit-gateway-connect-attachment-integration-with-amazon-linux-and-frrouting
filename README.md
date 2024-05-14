@@ -215,8 +215,10 @@ Origin codes:  i - IGP, e - EGP, ? - incomplete
 *> 192.168.0.0/24   0.0.0.0                  0         32768 i
 
 Total number of prefixes 4
+```
 
-ip-172-31-1-152.us-west-2.compute.internal# sh ip bgp neighbors 169.254.6.2 received-routes
+```
+# sh ip bgp neighbors 169.254.6.2 received-routes
 BGP table version is 0, local router ID is 169.254.6.1, vrf id 0
 Default local pref 100, local AS 65000
 Status codes:  s suppressed, d damped, h history, * valid, > best, = multipath,
