@@ -1,6 +1,6 @@
 ## Transit Gateway Connect Attachment integration with Amazon Linux using FRRouting and BGP over GRE
 
-If you are looking to test TGW Connect attachment functionality it typically requires procuring 3rd party SD-WAN virtual appliances from Marketplace, obtain eval licenses etc, some of these steps are time consuming, setups are complex and prevents customers from testing this important feature of TGW which is very commonly used to seamlessly integrate with SD-WAN fabrics.
+If you are looking to test the TGW Connect attachment functionality, it typically requires procuring third-party SD-WAN virtual appliances from the Marketplace, obtaining evaluation licenses, etc. Some of these steps are time-consuming, and the setups are complex, preventing customers from easily testing this important feature of TGW, which is very commonly used to seamlessly integrate with SD-WAN fabrics.
 
 The intent of this GitHub samples repository is to show how easy and seamless it is to implement TGW Connect using Amazon Linux and [FRRouting (FRR)](https://frrouting.org/), which is a free and open-source Internet routing protocol suite for Linux and Unix platforms that supports all features of BGP. You will not need any license and can configure and test it at no cost (only pay for the underlying EC2 instance). Once you are comfortable with the concept, you can then choose to implement any of the third-party vendor solutions of your choice.
 
