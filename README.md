@@ -180,7 +180,7 @@ Total number of neighbors 2
 #
 ```
 
-If the BGP is not getting established verify there is connectivity to TGW BGP IPs on TCP port 179
+If the BGP is not getting established verify there is connectivity from the Linux instance to TGW BGP IPs on TCP port 179
 
 ```
 # telnet 169.254.6.2 179
