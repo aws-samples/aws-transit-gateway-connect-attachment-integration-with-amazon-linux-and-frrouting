@@ -240,7 +240,8 @@ Verify BGP status on TGW side:
 
 Verify that TGW has learned the routes from the virtual appliance:
 
-<img width="569" alt="TGW received routes" src="https://github.com/aws-samples/aws-transit-gateway-connect-attachment-integration-with-amazon-linux-and-frrouting/assets/168686031/563009f8-7797-4d8e-b50f-edd88cb5300a">
+<img width="804" alt="TGW received routes" src="https://github.com/aws-samples/aws-transit-gateway-connect-attachment-integration-with-amazon-linux-and-frrouting/assets/168686031/c52bf4b4-0abe-4196-9f97-3692dc8ff002">
+
 
 
 ## IPv6 with MP-BGP Setup
