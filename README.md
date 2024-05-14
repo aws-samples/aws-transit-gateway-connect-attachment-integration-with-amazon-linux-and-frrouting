@@ -119,7 +119,6 @@ router bgp 65000
 # write memory
 #
 ```
-Note: If you use eBGP, you must configure ebgp-multihop with a time-to-live (TTL) value of 2.
 
 Verify configurations:
 
