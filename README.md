@@ -114,6 +114,11 @@ router bgp 65000
   neighbor ebgp soft-reconfiguration inbound
  exit-address-family
 !
+```
+
+Save running configuration
+
+```
 ! Save config
 !
 # write memory
