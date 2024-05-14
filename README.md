@@ -40,7 +40,7 @@ Verify TGW connect peer configurations, BGP will come up only after FRR is confi
 
 ### Setup GRE tunnel interfaces on Linux instance:
 
-Configure:
+#### Configure:
 
 ```
 $ sudo ip link set dev eth0 mtu 8500
@@ -53,7 +53,7 @@ $ sudo ip addr add "169.254.6.1/29" dev gre1
 $ sudo ip link set gre1 up
 ```
 
-Verify:
+#### Verify:
 
 ```
 $ ip addr show eth0
@@ -87,7 +87,7 @@ https://docs.frrouting.org/projects/dev-guide/en/latest/building-frr-for-centos7
 
 Note: If you use eBGP, you must configure ebgp-multihop with a time-to-live (TTL) value of 2.
 
-Configure:
+#### Configure:
 
 ```
 ! from the Linux shell go into FRR shell
@@ -116,7 +116,7 @@ router bgp 65000
 !
 ```
 
-Save running configuration
+#### Save running configuration
 
 ```
 ! Save config
@@ -125,7 +125,7 @@ Save running configuration
 #
 ```
 
-Verify configurations:
+#### Verify configurations:
 
 ```
 # show running-config
@@ -160,7 +160,7 @@ end
 #
 ```
 
-Verify BGP neighborship status:
+#### Verify BGP neighborship status:
 
 ```
 # sh ip bgp summary
@@ -197,7 +197,7 @@ Escape character is '^]'.
 #
 ```
 
-Verify BGP advertised and Received routes:
+#### Verify BGP advertised and Received routes:
 
 ```
 # sh ip bgp neighbors 169.254.6.2 advertised-routes
@@ -234,11 +234,11 @@ Origin codes:  i - IGP, e - EGP, ? - incomplete
 Total number of prefixes 3
 #
 ```
-Verify BGP status on TGW side:
+#### Verify BGP status on TGW side:
 
 ![TGW BGP](https://github.com/aws-samples/aws-transit-gateway-connect-attachment-integration-with-amazon-linux-and-frrouting/assets/168686031/de2cc1ae-0c83-489e-94cf-56e38e201255)
 
-Verify that TGW has learned the routes from the virtual appliance:
+#### Verify that TGW has learned the routes from the virtual appliance:
 
 <img width="804" alt="TGW received routes" src="https://github.com/aws-samples/aws-transit-gateway-connect-attachment-integration-with-amazon-linux-and-frrouting/assets/168686031/c52bf4b4-0abe-4196-9f97-3692dc8ff002">
 
@@ -248,15 +248,15 @@ Verify that TGW has learned the routes from the virtual appliance:
 
 ![IPv6 with MPBGP](https://github.com/aws-samples/aws-transit-gateway-connect-attachment-integration-with-amazon-linux-and-frrouting/assets/168686031/04775c77-d539-4985-8ec7-1b3a7e79a125)
 
-Add IPv6 CIDR to TGW
+#### Add IPv6 CIDR to TGW
 
 ![add cidr](https://github.com/aws-samples/aws-transit-gateway-connect-attachment-integration-with-amazon-linux-and-frrouting/assets/168686031/73751fce-a327-4ca1-ad0a-04426f582046)
 
-When creating the TGW Connect peer, add below for the field “BGP Inside CIDR blocks IPv6 - optional”
+#### When creating the TGW Connect peer, add below for the field “BGP Inside CIDR blocks IPv6 - optional”
 
 ![add cidr](https://github.com/aws-samples/aws-transit-gateway-connect-attachment-integration-with-amazon-linux-and-frrouting/assets/168686031/13de7fe2-4f23-439f-bd5a-75a9da8ae760)
 
-GRE setup:
+#### GRE setup:
 
 You need IPv6 address to the connect peer added. This is for the correct next-hop for v6 addresses. Add IPv6 address to the existing GRE tunn int (GRE Tunn interface will have both v4 and v6 add):
 
@@ -285,7 +285,8 @@ $ ip addr show gre1
        valid_lft forever preferred_lft forever
 $
 ```
-BGP Configuration:
+
+#### BGP Configuration:
 
 ```
 # show running-config
@@ -297,8 +298,6 @@ frr version 7.2
 frr defaults traditional
 hostname ip-172-31-1-152.us-west-2.compute.internal
 !
-ip route 1.1.1.1/32 Null0
-ip route 1.1.1.1/32 lo
 ip route 192.168.0.0/24 192.168.0.1
 ipv6 route 3ffe:506::/32 eth0
 !
@@ -339,7 +338,7 @@ End
 #
 ```
 
-Verify BGP Neighborship:
+#### Verify BGP Neighborship:
 
 ```
 # show bgp ipv6 unicast
@@ -359,11 +358,11 @@ Displayed  2 routes and 2 total paths
 #
 ```
 
-Verify that TGW has learned the routes from the virtual appliance:
+#### Verify that TGW has learned the routes from the virtual appliance:
 
 ![v6 routes](https://github.com/aws-samples/aws-transit-gateway-connect-attachment-integration-with-amazon-linux-and-frrouting/assets/168686031/5ccab12c-82cf-4aa2-80d1-e0618b4dedab)
 
-Cleanup:
+#### Cleanup:
 
 In Linux:
 
@@ -382,7 +381,7 @@ Remove FRR BGP Configs
 ```
 
 
-### Note:
+### Considerations:
 
 * While the code/config samples in this repository have been thoroughly tested and appear to function correctly, it is essential to validate them in your specific environment before deploying them in a production setting
 * IPv6 considerations: 
