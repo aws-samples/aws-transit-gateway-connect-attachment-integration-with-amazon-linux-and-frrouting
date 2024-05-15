@@ -254,7 +254,7 @@ Total number of prefixes 3
 
 #### When creating the TGW Connect peer, add below for the field “BGP Inside CIDR blocks IPv6 - optional”
 
-![add cidr](https://github.com/aws-samples/aws-transit-gateway-connect-attachment-integration-with-amazon-linux-and-frrouting/assets/168686031/13de7fe2-4f23-439f-bd5a-75a9da8ae760)
+![bgp inside cidr block](https://github.com/aws-samples/aws-transit-gateway-connect-attachment-integration-with-amazon-linux-and-frrouting/assets/168686031/808d93de-80cc-468c-863b-90d9e5a3b33d)
 
 #### GRE setup:
 
